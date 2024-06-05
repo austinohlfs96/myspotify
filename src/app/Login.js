@@ -5,7 +5,7 @@ import Dashboard from './DashBoard';
 
 const CLIENT_ID = '6c9db96521d44aabbf0156467a180669'; // Replace with your Spotify app client ID
 const SCOPES = 'user-read-private user-top-read user-read-recently-played playlist-modify-private';
-const REDIRECT_URI = 'https://myspotify-xq17.onrender.com/callback';
+const REDIRECT_URI = 'https://myspotify-xq17.onrender.com/';
 const LOGIN_URL = `https://accounts.spotify.com/authorize?client_id=${CLIENT_ID}&redirect_uri=${encodeURIComponent(REDIRECT_URI)}&scope=${encodeURIComponent(SCOPES)}&response_type=token&show_dialog=true`;
 
 const Login = () => {
