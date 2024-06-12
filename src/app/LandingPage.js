@@ -10,7 +10,7 @@ const LandingPage = () => {
 
   return (
     <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
-      <h1>Spotify Recommendations</h1>
+      <h1>My Spotify</h1>
       {isLoggedIn ? (
          <Login  /> // Pass access token if logged in
       ) : (
