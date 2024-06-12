@@ -29,7 +29,7 @@ const PlaylistGenerator = () => {
   const [selectedGenre, setSelectedGenre] = useState('rock');
   const [player, setPlayer] = useState(null);
   const [deviceId, setDeviceId] = useState(null);
-  const [tracks, setTracks] = useState('50')
+  const [tracks, setTracks] = useState('5')
   
   
   
