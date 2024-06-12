@@ -8,7 +8,7 @@ const CLIENT_ID = '6c9db96521d44aabbf0156467a180669'; // Replace with your Spoti
 const SCOPES = 'user-read-private user-top-read user-read-recently-played playlist-modify-private user-read-playback-state user-modify-playback-state streaming';
 const REDIRCT_URI = 'https://myspotify-xq17.onrender.com/';
 const devREDIRCT_URI = 'http://localhost:3003/';
-const LOGIN_URL = `https://accounts.spotify.com/authorize?client_id=${CLIENT_ID}&redirect_uri=${encodeURIComponent(devREDIRCT_URI)}&scope=${encodeURIComponent(SCOPES)}&response_type=token&show_dialog=true`;
+const LOGIN_URL = `https://accounts.spotify.com/authorize?client_id=${CLIENT_ID}&redirect_uri=${encodeURIComponent(REDIRCT_URI)}&scope=${encodeURIComponent(SCOPES)}&response_type=token&show_dialog=true`;
 
 
 
