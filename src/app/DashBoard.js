@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Pie } from 'react-chartjs-2'; // Importing Pie chart component
-import Chart from 'chart.js/auto';
-import Playlist from './Playlist';
+import ListeningTimeChart from './ListeningTime';
 
 const Dashboard = ({ accessToken }) => {
   const [profile, setProfile] = useState(null);
@@ -37,6 +36,7 @@ const Dashboard = ({ accessToken }) => {
       });
       const data = await response.json();
       setProfile(data);
+      console.log('User Profile Data:', data); 
     } catch (error) {
       console.error('Error fetching profile data:', error);
       navigate('/');
@@ -73,6 +73,8 @@ const Dashboard = ({ accessToken }) => {
       console.error('Error fetching top tracks:', error);
     }
   };
+
+  
 
   // Fetch recent tracks
   const fetchRecentTracks = async (accessToken) => {
@@ -133,7 +135,7 @@ const Dashboard = ({ accessToken }) => {
       <div className="bento-box">
         <div className="bento-item">
           <h2>Profile</h2>
-          <img src={profile.images[0]?.url} alt="Profile" className="profile-image" />
+          <img src={profile.images[1]?.url} alt="Profile" className="profile-image" />
           <p><strong>Display Name:</strong> {profile.display_name}</p>
           <p><strong>Country:</strong> {profile.country}</p>
           <p><strong>Email:</strong> {profile.email}</p>
@@ -166,7 +168,8 @@ const Dashboard = ({ accessToken }) => {
           <h2>Top Genres</h2>
           {topGenresData && <Pie data={topGenresData} />} {/* Rendering Pie chart */}
         </div>
-        <Playlist artistId={selectedArtist}/>
+        <ListeningTimeChart accessToken={accessToken} />
+        {/* <Playlist artistId={selectedArtist}/> */}
       </div>
     </div>
   );
